@@ -1,224 +1,342 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
 
-<!DOCTYPE html>
-<html>
-<head>
     {% extends 'nix/base.html' %}
     <title>{% block title %}Nix Auto{% endblock %}</title>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</head>
-<body>
+    <!--Estilo Css -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-       <!--Container principal-->
-	<div id="main">
-		<!--Header-->
-		<div id="header">
-			<!--Menu-->
-			<div id="logo">
-				<h1>Auto<span id="branco">Nix</span></h1>
-				<h5>Classi<span id="branco">ficados</span></h5>
-			</div>
-			<!--Menu-->
-			<!-- Area do Menu-->
-			<div id="menu">
-				<a href="index.html">Home</a>
-				<a href="carro.html">Carros</a>
-				<a href="motos.html">Motos</a>
-				<a href="anunciar.html">Como Anunciar seus veiculos</a>
-				<a href="contato.html">Contatos</a>
-			</div>
-			<!-- Final da area de Menu-->
-		</div>
-		<!--fim Header-->
-    <!--Display Anuncios-->
-			{% block content %}
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
 
-			<div style=" height:auto;border:1px solid red"  class="display-anuncios">
+    <style type="text/css">
+        #insta {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 0%, #fd5949 20%, #d6249f 60%, #285AEB 90%);
+                -webkit-background-clip: text;
+                /* Also define standard property for compatibility */
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+  
+               
 
-				<!--Inicio da Table -->
+                border-color: black;
+  
+            }
 
-				<table >
-					<!-- Linha 1 da tabela-->
-					{%for anuncio in posts %}
-					<tr >
-						<!--Anuncio 1 da linha 1-->
+            .logo-midias{
+              float: right;
+            }
+    </style>
 
-						<td  style=" width:1080px; border:1px solid red" class="anuncio">
+    
 
+  </head>
 
-						<div style="border:3px solid black">
-							<div class="titulo-anuncio">{{anuncio}}</div>
-							
-							<img class="formato-foto" src="{{anuncio.imagem.url}}">
-							
-							<a href=""><button  > Detalhes do Veiculo</button></a>
-							
-					    </div>
-						<div style="border:1px solid green">
-							<div style="border:1px solid green"> <span style="border:1px solid red" class="autor-anuncio">Anunciante : {{ anuncio.anunciante }} 	</span><span style=" margin: 10px;float:right; margin: 0px; border:1px solid green">Valor: {{anuncio.valor}}</span></div>
-					    </div>
-						</td>
+  <body class="w-auto" >
+    <div class="container-fluid clearfix" >
+      <div class="row" >
+      <nav class="navbar navbar-expand-lg navbar-dark  bg-header col-10  " >
+        <!--Logo -->
+        <div class="navbar-brand ml-0"><div id="logo">
+        <h1>Auto<span style="color: black;  ">Nix</span></h1>
+        <h5>Classi<span id="branco">ficados</span></h5>
+        </div>
+        </div>
+        <!--Menu Hamburguer -->
+        <button class="navbar-toggler mr-4 bg-warning " data-toggle="collapse" data-target="#navegacao">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!--Navegação -->
+        <div class="collapse navbar-collapse col-6   " id="navegacao" >
+            <ul class="navbar-nav mx-4  " >
+                <li class="nav-item mr-3">
+                    <a href="" class="nav-link btn btn-warning text-dark ">Home</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a href="" class="nav-link  btn btn-warning text-dark">Carros</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a href="" class="nav-link  btn btn-warning text-dark">Motos</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a href="" class="nav-link  btn btn-warning text-dark">Anunciar</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a href="" class="nav-link  btn btn-warning text-dark">Contatos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <!-- Links Redes Sociais -->
+          <span  class="col-1 aling-self-center"  >
+          <!-- Link Instagram -->
+          <i class="fab fa-instagram   display-4 m-2  "  id="insta" aria-hidden="true"></i>
 
-						<!--Fim do anuncio-->
-
-						<!--Anuncio 1 da linha 1-->
-
-						<td  style=" width:1080px; border:1px solid red" class="anuncio">
-
-
-						<div style="border:3px solid black">
-							<div class="titulo-anuncio">{{anuncio}}</div>
-							
-							<img class="formato-foto" src="{{anuncio.imagem.url}}">
-							
-							<a href=""><button  > Detalhes do Veiculo</button></a>
-							
-					    </div>
-						<div style="border:1px solid green">
-							<div style="border:1px solid green"> <span style="border:1px solid red" class="autor-anuncio">Anunciante : {{ anuncio.anunciante }} 	</span><span style=" margin: 10px;float:right; margin: 0px; border:1px solid green">Valor: {{anuncio.valor}}</span></div>
-					    </div>
-						</td>
-
-
-						<!--Fim do anuncio-->
-
-						<!--Anuncio 1 da linha 1-->
-
-						<td  style=" width:1080px; border:1px solid red" class="anuncio">
+          <!-- Link Facebook -->
+          <i class="fab fa-facebook-square display-4  m-2 " style="color: #3b5998;"></i>
+          </span>
+    </div>
 
 
-						<div style="border:3px solid black">
-							<div class="titulo-anuncio">{{anuncio}}</div>
-							
-							<img class="formato-foto" src="{{anuncio.imagem.url}}">
-							
-							<a href=""><button  > Detalhes do Veiculo</button></a>
-							
-					    </div>
-						<div style="border:1px solid green">
-							<div style="border:1px solid green"> <span style="border:1px solid red" class="autor-anuncio">Anunciante : {{ anuncio.anunciante }} 	</span><span style=" margin: 10px;float:right; margin: 0px; border:1px solid green">Valor: {{anuncio.valor}}</span></div>
-					    </div>
-						</td>
+    <!-- Inicio Coluna Busca -->   
+     <nav class=" navbar navbar-expand-lg bg-warning rounded pr-4 pl-5 mr-4 ml-5  " style="border:1px solid red;">
 
 
-						<!--Fim do anuncio-->
-					</tr>
-					{% endfor %}
-				</table>
+        <!--Opçoes de veiculos-->
+        <select class=""  id="caixa-selecao"name="veiculo" id="veiculo" onchange="AbrirSecao(this.value)">
+          <option value="*" selected>Veiculos</option>
+          <option value="carro.html">Carro</option>
+          <option>Moto</option>
+          <option>Caminhão</option>
+          <option>Nautica</option>
+        </select>
 
-			</div>
+        <!--Marca-->
+        <select id="caixa-selecao">
+          <option value="*" selected>Marca</option>
+          <option>AUDI</option>
+          <option>BMW</option>
+          <option>CAOA CHERY</option>
+          <option>CHEVROLET</option>
+          <option>CRYSLER</option>
+          <option>CITRÖEN</option>
+          <option>DODGE</option>
+          <option>FIAT</option>
+          <option>FORD</option>
+          <option>HONDA</option>
+          <option>HYUNDAI</option>
+          <option>JAC</option>
+          <option>JAGUAR</option>
+          <option>JEEP</option>
+          <option>KIA</option>
+          <option>LAND ROVER</option>
+          <option>MERCEDE-BENZ</option>
+          <option>MITSUBISHI</option>
+          <option>NISSAN</option>
+          <option>PEGEOUT</option>
+          <option>AUDI</option>
+          <option>RENAULT</option>
+          <option>SUZUKI</option>
+          <option>TOYOTA</option>
+          <option>TROLLER</option>
+          <option>VOLKSWAGEM</option>
+          <option>VOLVO</option>
+          <option>YAMAHA</option>
+        </select>
+        <!--Ano-->
+        <select id="caixa-selecao">
+          <option value="*" selected>Ano</option>
+          <option>2021</option>
+          <option>2020</option>
+          <option>2019</option>
+          <option>2018</option>
+          <option>2017</option>
+          <option>2016</option>
+          <option>2015</option>
+          <option>2014</option>
+          <option>2013</option>
+          <option>2012</option>
+          <option>2011</option>
+          <option>2010</option>
+          <option>2009</option>
+          <option>2008</option>
+          <option>2007</option>
+          <option>2006</option>
+          <option>2005</option>
+          <option>2004</option>
+          <option>2003</option>
+          <option>2002</option>
+          <option>2001</option>
+          <option>2000</option>
+          <option>1999</option>
+        </select>
 
-			{% endblock%}
+        <!--Modelo-->
+        <select id="caixa-selecao">
+          <option value="*" selected>Modelo</option>
+          <option value="carro">Carro</option>
+          <option>Moto</option>
+          <option>Caminhão</option>
+          <option>Nautica</option>
+        </select>
+        <!--Cor-->
+        <select id="caixa-selecao">
+          <option value="*" selected>Cor</option>
+          <option>Carro</option>
+          <option>Moto</option>
+          <option>Caminhão</option>
+          <option>Nautica</option>
+        </select>
+      </nav>
+    
+     <!--Fim Coluna busca -->  
+
+    
+     {% block content %}
+     {%for anuncio in posts %}
+     <!--Anuncios-->
+    <div class="card-columns col-12 mt-3 pt-3 bg-header rounded" style="border: 1px solid red;">
+      
+      <!--Anuncio 1 -->
+      <div class="card   ">
+      <h4 class="card-title m-0  text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 2 -->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 3 -->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 4 -->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 5 -->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 6 -->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 7 -->
+      <div class="card">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 8 -->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
+
+      <!--Anuncio 9-->
+      <div class="card ">
+      <h4 class="card-title m-0 text-center">{{anuncio}}</h4>
+      <img class="card-img-top p-2" src="{{anuncio.imagem.url}}">
+            <div>
+              
+              <div >Valor:{{anuncio.valor}}</div>
+              <a  class="btn btn-outline-primary btn-sm float-right mx-3 mb-3 d-inline"  href="">Detalhes do Veículos</a>
+              <div class="m-0 d-inline" style="font-size: 0.5em;">Anunciado por:{{ anuncio.anunciante }}</div>
+        </div>
+      </div>
 
 
-		<!--Final do Display Anuncios-->
+      
+    </div><!--Fim Colunas -->
+      {% endfor %}
+      {% endblock%}
 
-       <!-- Area de busca-->
-			<div id="col-busca">
-				<h3>Procura por: </h3>
-				<select id="caixa-selecao" name="opcao" id="opcao" onchange="AbrirSecao(this.value)">
-					<option value="*" selected>Compra/Venda</option>
-					<option value="carro.html">Compra</option>
-					<option value="venda.html">Venda</option>
-				</select>
-				<!--Opçoes de veiculos-->
-				<select id="caixa-selecao"name="veiculo" id="veiculo" onchange="AbrirSecao(this.value)">
-					<option value="*" selected>Veiculos</option>
-					<option value="carro.html">Carro</option>
-					<option>Moto</option>
-					<option>Caminhão</option>
-					<option>Nautica</option>
-				</select>
+   <footer class="text-center bg-warning h-auto  " style="font-size: 1em">
+    <div>Desenvolvido por Antherus Desenvolvimento Web</div>
 
-				<!--Marca-->
-				<select id="caixa-selecao">
-					<option value="*" selected>Marca</option>
-					<option>AUDI</option>
-					<option>BMW</option>
-					<option>CAOA CHERY</option>
-					<option>CHEVROLET</option>
-					<option>CRYSLER</option>
-					<option>CITRÖEN</option>
-					<option>DODGE</option>
-					<option>FIAT</option>
-					<option>FORD</option>
-					<option>HONDA</option>
-					<option>HYUNDAI</option>
-					<option>JAC</option>
-					<option>JAGUAR</option>
-					<option>JEEP</option>
-					<option>KIA</option>
-					<option>LAND ROVER</option>
-					<option>MERCEDE-BENZ</option>
-					<option>MITSUBISHI</option>
-					<option>NISSAN</option>
-					<option>PEGEOUT</option>
-					<option>AUDI</option>
-					<option>RENAULT</option>
-					<option>SUZUKI</option>
-					<option>TOYOTA</option>
-					<option>TROLLER</option>
-					<option>VOLKSWAGEM</option>
-					<option>VOLVO</option>
-					<option>YAMAHA</option>
-				</select>
-				<!--Ano-->
-				<select id="caixa-selecao">
-					<option value="*" selected>Ano</option>
-					<option>2021</option>
-					<option>2020</option>
-					<option>2019</option>
-					<option>2018</option>
-					<option>2017</option>
-					<option>2016</option>
-					<option>2015</option>
-					<option>2014</option>
-					<option>2013</option>
-					<option>2012</option>
-					<option>2011</option>
-					<option>2010</option>
-					<option>2009</option>
-					<option>2008</option>
-					<option>2007</option>
-					<option>2006</option>
-					<option>2005</option>
-					<option>2004</option>
-					<option>2003</option>
-					<option>2002</option>
-					<option>2001</option>
-					<option>2000</option>
-					<option>1999</option>
-				</select>
+    <div style="font-size: 0.8em;">www.antherus.com.br</div>
+    <!-- Links Redes Sociais -->
+          <div  class=" aling-self-center float-right mx-5"  >
+          <!-- Link Instagram -->
+          <i class="fab fa-instagram   display-5 ml-3  "  id="insta" aria-hidden="true"></i><span class=" m-1">@nixauto</span>
 
-				<!--Modelo-->
-				<select id="caixa-selecao">
-					<option value="*" selected>Modelo</option>
-					<option value="carro">Carro</option>
-					<option>Moto</option>
-					<option>Caminhão</option>
-					<option>Nautica</option>
-				</select>
-				<!--Cor-->
-				<select id="caixa-selecao">
-					<option value="*" selected>Cor</option>
-					<option>Carro</option>
-					<option>Moto</option>
-					<option>Caminhão</option>
-					<option>Nautica</option>
-				</select>
-			</div>
+          
+          </div>
+
+          <span  class="col-1 aling-self-center float-right"  >
+            <!-- Link Facebook -->
+          <i class="fab fa-facebook-square display-5  mx-1 " style="color: #3b5998;">/nixauto</i>
+          </span>
+  </footer>
     </div>
        <!--Fim container-->
 
-       <!--Anunciantes-->
-       <div class="coluna-anuncios">
-		aNUNCIOS
-	</div>
+     
+
+   
+    
+     
+    
 
 
 
-</body>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
